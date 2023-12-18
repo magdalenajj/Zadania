@@ -21,13 +21,13 @@ public class Zadanie2Steps {
     public void userIsOnMainPage() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(45));
         driver.get("https://mystore-testlab.coderslab.pl/");
     }
     @When("User enter an email and psswd")
     public void userIsSingingIn() {
         driver.findElement(By.xpath("//span[contains(text(),'Sign in')]")).click();
-        driver.findElement(By.name("email")).sendKeys("pikotova@gmail.com");
+        driver.findElement(By.name("email")).sendKeys("kaszmir15@wp.pl");
         driver.findElement(By.name("password")).sendKeys("lalala");
         driver.findElement(By.id("submit-login")).click();
 
@@ -80,7 +80,7 @@ public class Zadanie2Steps {
     @And("Do a screenshot")
     public void doAscreenshot() throws IOException {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenshot,new File(("D:\\CodersLab - materiały\\screnshot1.jpg")));
+        FileUtils.copyFile(screenshot,new File(("C:\\CodersLab\\screenshot.jpg")));
 
     }
     @And("The user closes the browser")

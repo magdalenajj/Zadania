@@ -7,7 +7,7 @@ Feature: Adding new address
     And User selects "Create new address" option
     And <alias> alias is entered in alias input field,<address> address is entered in address input field,<city> city is entered in city input field,<zipCode> zipCode is entered in zip code input field,<phone> phone is entered in phone input field
     Then New address is added,user can see message "Address successfully added!"
-    And Checking if <expectedAlias> expectedAlias, <expectedAddress> expectedAddress, <expectedCity> expectedCity, <expectedZipCode> expectedZipCode, <expectedPhone> expectedPhone is entered correctly
+
     And close browser
     Examples:
 

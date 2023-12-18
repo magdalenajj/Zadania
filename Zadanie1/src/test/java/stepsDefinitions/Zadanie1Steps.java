@@ -26,7 +26,7 @@ public class Zadanie1Steps {
     @When("User enter an email and password")
     public void userSingIn() {
         driver.findElement(By.xpath("//*[@id=\"_desktop_user_info\"]/div/a")).click();
-        driver.findElement(By.id("field-email")).sendKeys("pikotova@gmail.com");
+        driver.findElement(By.id("field-email")).sendKeys("kaszmir15@wp.pl");
         driver.findElement(By.id("field-password")).sendKeys("lalala");
         driver.findElement(By.id("submit-login")).click();
 
@@ -73,17 +73,17 @@ public class Zadanie1Steps {
         Assertions.assertTrue(succesAlert.isDisplayed(),"Success alert should be visible");
         Assertions.assertEquals(alertText,succesAlert.getText());
     }
-    @And ("Checking if {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone is entered corectly")
+    @And ("Checking if {string} expectedAlias, {string} expectedAddress, {string} expectedCity, {string} expectedZipCode, {string} expectedPhone is entered correctly")
     public void fieldsAreEntered(String expectedAlias,String expectedAddress, String expectedCity, String expectedZipCode, String expectedPhone){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://mystore-testlab.coderslab.pl/index.php?controller=addresses");
-        WebElement newAddress = driver.findElement(By.cssSelector("#address-5310"));
+      WebElement newAddress = driver.findElement(By.id("addresses-link"));
         String newAddressField=newAddress.getText();
         Assertions.assertTrue(newAddressField.contains(expectedAlias));
         Assertions.assertTrue(newAddressField.contains(expectedAddress));
         Assertions.assertTrue(newAddressField.contains(expectedCity));
         Assertions.assertTrue(newAddressField.contains(expectedZipCode));
-        Assertions.assertTrue(newAddressField.contains(expectedPhone));
+       Assertions.assertTrue(newAddressField.contains(expectedPhone));
 
     }
     @And("close browser")
